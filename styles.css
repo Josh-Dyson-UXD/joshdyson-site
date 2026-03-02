@@ -1,0 +1,171 @@
+/* JoshDyson.com — minimal Apple‑inspired styling
+   Tip: keep this file small and intentional. */
+
+:root{
+  --bg: #ffffff;
+  --text: #0b0c0f;
+  --muted: rgba(11,12,15,.64);
+  --hairline: rgba(11,12,15,.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 20px;
+  --radius2: 16px;
+  --max: 860px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.bg{
+  position: fixed;
+  inset: -120px;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(0,122,255,.12), transparent 55%),
+    radial-gradient(800px 520px at 85% 25%, rgba(255,149,0,.12), transparent 55%),
+    radial-gradient(700px 520px at 40% 95%, rgba(52,199,89,.10), transparent 60%);
+  filter: blur(0px);
+  pointer-events: none;
+}
+
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 20px 48px;
+  position: relative;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.badge{
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(12px);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+}
+
+.badge span{
+  font-weight: 650;
+  letter-spacing: .5px;
+  font-size: 14px;
+}
+
+.title{
+  margin: 0;
+  font-size: clamp(32px, 5vw, 44px);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.card{
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+  margin: 18px 0 20px;
+}
+
+.card p{
+  margin: 0;
+  color: rgba(11,12,15,.84);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tile{
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius2);
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.tile:hover{
+  transform: translateY(-2px);
+  border-color: rgba(11,12,15,.18);
+  background: rgba(255,255,255,.86);
+}
+
+.tile:active{
+  transform: translateY(0px);
+}
+
+.tile-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.tile-title{
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.tile-icon{
+  color: rgba(11,12,15,.50);
+}
+
+.tile-desc{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tile-static{
+  cursor: default;
+}
+
+.footer{
+  margin-top: 28px;
+  padding-top: 10px;
+}
+
+.fineprint{
+  margin: 0;
+  color: rgba(11,12,15,.45);
+  font-size: 13px;
+}
+
+@media (max-width: 560px){
+  .wrap{ padding-top: 44px; }
+  .grid{ grid-template-columns: 1fr; }
+}
