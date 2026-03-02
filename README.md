@@ -33,3 +33,7 @@ Then update DNS at your registrar (GoDaddy):
 
 ## Social preview (OG image)
 This repo includes `og.png` (1200×630) and meta tags are already set in `index.html`.
+
+
+## Portrait
+This repo includes `josh.webp` and `josh.png` used in the hero.
